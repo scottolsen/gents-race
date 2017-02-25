@@ -10,31 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225133832) do
+ActiveRecord::Schema.define(version: 20170225141423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "riders", force: :cascade do |t|
+    t.integer  "team_id"
+    t.string   "name"
+    t.string   "level"
+    t.integer  "strava_id"
+    t.decimal  "ytd_distance"
+    t.decimal  "ytd_time"
+    t.integer  "ytd_elevation"
+    t.integer  "ytd_rides"
+    t.decimal  "all_time_distance"
+    t.decimal  "all_time_time"
+    t.integer  "all_time_elevation"
+    t.integer  "all_time_rides"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "captain_email"
-    t.string   "captain_name"
-    t.string   "captain_level"
-    t.integer  "captain_strava_id"
-    t.string   "rider_2_name"
-    t.string   "rider_2_level"
-    t.integer  "rider_2_strava_id"
-    t.string   "rider_3_name"
-    t.string   "rider_3_level"
-    t.integer  "rider_3_strava_id"
-    t.string   "rider_4_name"
-    t.string   "rider_4_level"
-    t.integer  "rider_4_strava_id"
-    t.string   "rider_5_name"
-    t.string   "rider_5_level"
-    t.integer  "rider_5_strava_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "year"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
