@@ -1,0 +1,44 @@
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.submit %>
+<% end %>
+
+<h1>Riders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+      <th>YTD Distance</th>
+      <th>YTD Time</th>
+      <th>YTD Elevation</th>
+      <th>YTD Rides</th>
+      <th>All Time Distance</th>
+      <th>All Time Time</th>
+      <th>All Time Elevation</th>
+      <th>All Time Rides</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @riders.each do |r| %>
+      <tr>
+        <td><%= r.name %></td>
+        <td><%= r.level %></td>
+        <td><%= r.ytd_distance %></td>
+        <td><%= r.ytd_time %></td>
+        <td><%= r.ytd_elevation %></td>
+        <td><%= r.ytd_rides %></td>
+        <td><%= r.all_time_distance %></td>
+        <td><%= r.all_time_time %></td>
+        <td><%= r.all_time_elevation %></td>
+        <td><%= r.all_time_rides %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
