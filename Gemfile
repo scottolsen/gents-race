@@ -7,6 +7,8 @@ end
 
 gem 'rails', '~> 5.0.1'
 
+gem 'bootstrap'
+gem 'bootstrap-generators'
 gem 'clearance'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
