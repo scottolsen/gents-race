@@ -7,7 +7,10 @@
     <tr>
       <th>Name</th>
       <th>Captain email</th>
-      <th colspan="3"></th>
+      <th>Start Time</th>
+      <th>Avg MPH</th>
+      <th>Slowest MPH</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -16,9 +19,14 @@
       <tr>
         <td><%= team.name %></td>
         <td><%= team.captain_email %></td>
-        <td><%= link_to 'Riders', riders_path(q: {team_id_eq: team.id}) %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= team.start_time %></td>
+        <td><%= team.riders.average(:ytd_mph) %> </td>
+        <td><%= team.riders.minimum(:ytd_mph) %> </td>
+        <td>
+          <%= link_to 'Riders', riders_path(q: {team_id_eq: team.id}) %>
+          <%= link_to 'Edit', edit_team_path(team) %>
+          <%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

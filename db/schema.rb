@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225141423) do
+ActiveRecord::Schema.define(version: 20170225174349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,9 @@ ActiveRecord::Schema.define(version: 20170225141423) do
     t.decimal  "all_time_time"
     t.integer  "all_time_elevation"
     t.integer  "all_time_rides"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.decimal  "ytd_mph",            precision: 5, scale: 1
   end
 
   create_table "teams", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170225141423) do
     t.integer  "year"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "start_time"
   end
 
   create_table "users", force: :cascade do |t|

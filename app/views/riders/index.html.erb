@@ -16,12 +16,13 @@
     <tr>
       <th>Name</th>
       <th>Level</th>
-      <th>YTD Distance</th>
-      <th>YTD Time</th>
+      <th>YTD MPH</th>
+      <th>YTD Miles</th>
+      <th>YTD Hours</th>
       <th>YTD Elevation</th>
       <th>YTD Rides</th>
-      <th>All Time Distance</th>
-      <th>All Time Time</th>
+      <th>All Time Miles</th>
+      <th>All Time Hours</th>
       <th>All Time Elevation</th>
       <th>All Time Rides</th>
     </tr>
@@ -32,13 +33,14 @@
       <tr>
         <td><%= r.name %></td>
         <td><%= r.level %></td>
-        <td><%= r.ytd_distance %></td>
-        <td><%= r.ytd_time %></td>
-        <td><%= r.ytd_elevation %></td>
+        <td><%= number_with_delimiter r.ytd_mph %></td>
+        <td><%= number_with_delimiter r.ytd_distance %></td>
+        <td><%= seconds_to_hours r.ytd_time %></td>
+        <td><%= number_with_delimiter r.ytd_elevation %></td>
         <td><%= r.ytd_rides %></td>
-        <td><%= r.all_time_distance %></td>
-        <td><%= r.all_time_time %></td>
-        <td><%= r.all_time_elevation %></td>
+        <td><%= number_with_delimiter r.all_time_distance %></td>
+        <td><%= seconds_to_hours r.all_time_time %></td>
+        <td><%= number_with_delimiter r.all_time_elevation %></td>
         <td><%= r.all_time_rides %></td>
       </tr>
     <% end %>
