@@ -16,10 +16,32 @@
     <%= f.text_field :name %>
   </div>
 
-    <div class="field">
-      <%= f.label :captain_email %>
-      <%= f.text_field :captain_email %>
-    </div>
+  <div class="field">
+    <%= f.label :captain_email %>
+    <%= f.text_field :captain_email %>
+  </div>
+  <% count = 1 %>
+  <%= f.fields_for :riders, @team.riders do |ff| %>
+    <fieldset>
+      <legend><%= "Rider #{count}" %></legend>
+      <% count += 1 %>
+      <div class="field">
+        <%= ff.label :name %>
+        <%= ff.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= ff.label :level %>
+        <%= ff.text_field :level %>
+      </div>
+
+      <div class="field">
+        <%= ff.label :strava_id %>
+        <%= ff.text_field :strava_id %>
+      </div>
+    </fieldset>
+    <br/>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

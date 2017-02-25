@@ -7,21 +7,6 @@
     <tr>
       <th>Name</th>
       <th>Captain email</th>
-      <th>Captain name</th>
-      <th>Captain level</th>
-      <th>Captain strava</th>
-      <th>Rider 2 name</th>
-      <th>Rider 2 level</th>
-      <th>Rider 2 strava</th>
-      <th>Rider 3 name</th>
-      <th>Rider 3 level</th>
-      <th>Rider 3 strava</th>
-      <th>Rider 4 name</th>
-      <th>Rider 4 level</th>
-      <th>Rider 4 strava</th>
-      <th>Rider 5 name</th>
-      <th>Rider 5 level</th>
-      <th>Rider 5 strava</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,22 +16,6 @@
       <tr>
         <td><%= team.name %></td>
         <td><%= team.captain_email %></td>
-        <td><%= team.captain_name %></td>
-        <td><%= team.captain_level %></td>
-        <td><%= team.captain_strava_id %></td>
-        <td><%= team.rider_2_name %></td>
-        <td><%= team.rider_2_level %></td>
-        <td><%= team.rider_2_strava_id %></td>
-        <td><%= team.rider_3_name %></td>
-        <td><%= team.rider_3_level %></td>
-        <td><%= team.rider_3_strava_id %></td>
-        <td><%= team.rider_4_name %></td>
-        <td><%= team.rider_4_level %></td>
-        <td><%= team.rider_4_strava_id %></td>
-        <td><%= team.rider_5_name %></td>
-        <td><%= team.rider_5_level %></td>
-        <td><%= team.rider_5_strava_id %></td>
-        <td><%= link_to 'Show', team %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
