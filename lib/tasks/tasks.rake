@@ -1,3 +1,5 @@
 task :scrape => :environment do
-  StravaScraper.new.run
+  Rider.where("strava_id is not null").each do |r|
+    StravaScraper.new(r)
+  end
 end
