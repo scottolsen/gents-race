@@ -1,9 +1,12 @@
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, class: 'form-inline' do |f| %>
 
-  <%= f.label :name_cont %>
+  <%= f.label :name_cont, "Name:" %>
   <%= f.search_field :name_cont %>
 
-  <%= f.submit %>
+  <%= f.label :team_id_eq, "Team" %>
+  <%= f.collection_select :team_id_eq, Team.order("name ASC"), :id, :name, include_blank: true %>
+
+  <%= f.submit 'Search', class: 'btn btn-success' %>
 <% end %>
 
 <h1>Riders</h1>

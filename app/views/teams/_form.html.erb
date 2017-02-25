@@ -1,4 +1,4 @@
-<%= form_for(team) do |f| %>
+<%= form_for team, html: {class: 'form-horizontal'} do |f| %>
   <% if team.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
@@ -11,39 +11,49 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, 'Team Name', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :captain_email %>
-    <%= f.text_field :captain_email %>
+  <div class="form-group">
+    <%= f.label :captain_email, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :captain_email, class: 'form-control' %>
+    </div>
   </div>
   <% count = 1 %>
   <%= f.fields_for :riders, @team.riders do |ff| %>
     <fieldset>
       <legend><%= "Rider #{count}" %></legend>
       <% count += 1 %>
-      <div class="field">
-        <%= ff.label :name %>
-        <%= ff.text_field :name %>
+      <div class="form-group">
+        <%= ff.label :name, class: 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= ff.text_field :name, class: 'form-control' %>
+        </div>
       </div>
 
-      <div class="field">
-        <%= ff.label :level %>
-        <%= ff.text_field :level %>
+      <div class="form-group">
+        <%= ff.label :level, class: 'col-sm-2 control-label'%>
+        <div class="col-sm-10">
+          <%= ff.text_field :level, class: 'form-control' %>
+        </div>
       </div>
 
-      <div class="field">
-        <%= ff.label :strava_id %>
-        <%= ff.text_field :strava_id %>
+      <div class="form-group">
+        <%= ff.label :strava_id, class: 'col-sm-2 control-label' %>
+        <div class="col-sm-10">
+          <%= ff.text_field :strava_id, class: 'form-control' %>
+        </div>
       </div>
     </fieldset>
     <br/>
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', class: 'btn btn-success' %>
   </div>
 <% end %>

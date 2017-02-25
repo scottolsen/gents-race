@@ -2,7 +2,7 @@
 
 <h1>Teams</h1>
 
-<table>
+<table class='table table-striped table-responsive'>
   <thead>
     <tr>
       <th>Name</th>
@@ -16,6 +16,7 @@
       <tr>
         <td><%= team.name %></td>
         <td><%= team.captain_email %></td>
+        <td><%= link_to 'Riders', riders_path(q: {team_id_eq: team.id}) %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
