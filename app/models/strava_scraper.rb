@@ -40,7 +40,7 @@ class StravaScraper
   end
 
   def distance(td)
-    td.text.gsub('mi', '')
+    td.text.gsub('mi', '').gsub(',', '')
   end
 
   def time(td)
