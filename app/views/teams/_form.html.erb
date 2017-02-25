@@ -1,0 +1,117 @@
+<%= form_for(team) do |f| %>
+  <% if team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+        <% team.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <fieldset>
+    <div class="field">
+      <%= f.label :captain_email %>
+      <%= f.text_field :captain_email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :captain_name %>
+      <%= f.text_field :captain_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :captain_level %>
+      <%= f.text_field :captain_level %>
+    </div>
+
+    <div class="field">
+      <%= f.label :captain_strava_id, 'Captain strava ID' %>
+      <%= f.number_field :captain_strava_id %>
+    </div>
+  </fieldset>
+  <br/>
+
+  <fieldset>
+    <div class="field">
+      <%= f.label :rider_2_name %>
+      <%= f.text_field :rider_2_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_2_level %>
+      <%= f.text_field :rider_2_level %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_2_strava_id, 'Rider 2 strava ID' %>
+      <%= f.number_field :rider_2_strava_id %>
+    </div>
+  </fieldset>
+  <br/>
+
+  <fieldset>
+    <div class="field">
+      <%= f.label :rider_3_name %>
+      <%= f.text_field :rider_3_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_3_level %>
+      <%= f.text_field :rider_3_level %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_3_strava_id, 'Rider 3 strava ID' %>
+      <%= f.number_field :rider_3_strava_id %>
+    </div>
+  </fieldset>
+  <br/>
+
+  <fieldset>
+    <div class="field">
+      <%= f.label :rider_4_name %>
+      <%= f.text_field :rider_4_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_4_level %>
+      <%= f.text_field :rider_4_level %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_4_strava_id, 'Rider 4 strava ID' %>
+      <%= f.number_field :rider_4_strava_id %>
+    </div>
+  </fieldset>
+  <br/>
+
+  <fieldset>
+    <div class="field">
+      <%= f.label :rider_5_name %>
+      <%= f.text_field :rider_5_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_5_level %>
+      <%= f.text_field :rider_5_level %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rider_5_strava_id, 'Rider 5 strava ID' %>
+      <%= f.number_field :rider_5_strava_id %>
+    </div>
+  </fieldset>
+  <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
