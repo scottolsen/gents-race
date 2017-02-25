@@ -57,7 +57,8 @@ class TeamsController < ApplicationController
     def team_params
       params.require(:team).permit(
         :name,
-        :captain_email
+        :captain_email,
+        :start_time
       ).merge(year: Date.today.year)
     end
 
